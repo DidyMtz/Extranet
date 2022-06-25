@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  userType : any =''
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+
+  loggedIn(){
+    
+  }
 }

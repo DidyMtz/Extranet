@@ -1,23 +1,31 @@
 
 <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">Extranet / App</a>
+      <a class="navbar-brand" routerLink="/signin">Extranet / App</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Prochaine livraison</a>
+            <a class="nav-link" *ngIf="loggedIn()" >Prochaine livraison</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Consultation RDV</a>
+            <a class="nav-link" *ngIf="loggedIn()">Consultation RDV</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Contact</a>
+            <a class="nav-link" *ngIf="loggedIn()">Contact</a>
+          </li>
+          <li class="nav-item dropdown" *ngIf="userType === 'admin' && loggedIn()">
+            <a class="nav-link dropdown-toggle"  routerLinkActive="active" role="button" data-bs-toggle="dropdown">Administration</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/register" ><i class="fas fa-user-alt"></i> Ajouter Client</a></li>
+              <li><a class="dropdown-item" routerLink="/admin" ><i class="fas fa-user-alt"></i> Supprimer Client</a></li>
+              <li><a class="dropdown-item" routerLink="/consultationAdm" ><i class="fas fa-calendar-alt"></i> Rendez-vous</a></li>
+            </ul>
           </li>
         </ul>
-        <form class="d-flex">
+        <form class="d-flex" *ngIf="loggedIn()">
           <input class="form-control me-2" type="text" placeholder="Search">
           <button class="btn btn-primary" type="button">Search</button>
         </form>
