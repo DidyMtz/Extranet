@@ -10,6 +10,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './admin/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { ConsultationAdmComponent } from './admin/consultation-adm/consultation-adm.component';
+import { ClientComponent } from './admin/client/client.component';
+import { UserComponent } from './admin/user/user.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RdvComponent } from './user/rdv/rdv.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +23,16 @@ import { ConsultationAdmComponent } from './admin/consultation-adm/consultation-
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    ConsultationAdmComponent
+    ConsultationAdmComponent,
+    ClientComponent,
+    UserComponent,
+    RdvComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MdbCheckboxModule
+    MdbCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,4 +3,5 @@
 3. Create a auth service for auth/signin
  
  import { getAuth,signOut, createUserWithEmailAndPassword,signInWithEmailAndPassword  } from "firebase/auth";
- 
+ - create function like createNewUser(), signInUser(), signOutUser() using firebase method in the import.
+4. Formulaire signIn et Register
