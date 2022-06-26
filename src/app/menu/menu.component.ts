@@ -1,4 +1,6 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 @Component({
   selector: 'app-menu',
@@ -7,16 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  userType : any =''
+  userType : any ='';
+  isAuth!: boolean;
   
   constructor() { }
 
   ngOnInit(): void {
+
+  this.loggedIn();
+
   }
 
-
-
   loggedIn(){
-    
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) =>{
+      if(user){return true;}
+      else{ return false;}
+    });
   }
 }
