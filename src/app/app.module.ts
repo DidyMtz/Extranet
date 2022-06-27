@@ -14,6 +14,8 @@ import { ClientComponent } from './admin/client/client.component';
 import { UserComponent } from './admin/user/user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RdvComponent } from './user/rdv/rdv.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RdvComponent } from './user/rdv/rdv.component';
     MdbCheckboxModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,    
+    AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

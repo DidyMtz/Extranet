@@ -1,7 +1,6 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
-import { ThisReceiver } from '@angular/compiler';
+import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -49,6 +48,6 @@ export class SigninComponent implements OnInit {
         this.attente = false;
         this.message = error;
       }
-    )
+    );
   }
 }

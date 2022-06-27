@@ -1,0 +1,42 @@
+Observable:  3 fonctions callback :  succes, error, complete
+Promise: 2 fonctions callback : success, error
+
+Obervable ne s'execute pas apres leur creation mais apres subscription.
+Promise s'execute directement apres leur creation.
+
+observable emet plusieurs valeur plus le temps passe.
+Promise emet une seule valeur.
+
+observable peut etre supprimé aavec une subscription.
+Promise ne peut pas etre supprimé.
+
+promise est asynchronous
+observable peut etre les deux. il est synchronous mais avec setTimeout function devient asynchronous.
+
+observable utilise des functions comme filtres, ...
+
+creation
+
+this.myobservable = new Observable<string>(observe =>{
+    console.log("creation observable");
+    observable.next("hello observable");
+});
+
+this.mypromise = new Promise<string>(resolve => {
+    console.log("creation promise");
+    resolve("hello promise")
+});
+
+execution
+
+this.myobservable.subscribe(data => {
+ console.log("observable executé");
+});
+
+this.mypromise.then(data => {
+    console.log("promise executé");
+});
+
+Cancel
+
+this.mysubscription.unsubscribe(); // si dans la creation : this mysubscription=new Obervable<string>(observe =>{});

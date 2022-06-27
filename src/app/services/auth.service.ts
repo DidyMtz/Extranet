@@ -48,8 +48,7 @@ export class AuthService {
     const auth = getAuth();
     signOut(auth).then(
       () => {
-      console.log("Vous etes déconnecté(e)");
-      
+      console.log("Vous etes déconnecté(e)");      
        }     
     ).catch(
       (error) => {
