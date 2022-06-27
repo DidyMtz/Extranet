@@ -49,6 +49,7 @@ export class AuthService {
     signOut(auth).then(
       () => {
       console.log("Vous etes déconnecté(e)");
+      
        }     
     ).catch(
       (error) => {

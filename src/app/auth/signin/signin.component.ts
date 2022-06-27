@@ -13,6 +13,7 @@ export class SigninComponent implements OnInit {
 
   signInForm! : FormGroup;
   message : string = "";
+  attente : boolean = false
 
   constructor(private auth : AuthService, private builder: FormBuilder, private router : Router) { }
 
@@ -34,13 +35,18 @@ export class SigninComponent implements OnInit {
 
   onSubmit(){
 
+    this.attente = true;
     const email = this.signInForm.get("email")?.value;
     const password = this.signInForm.get("password")?.value;
     this.auth.signInUser(email, password).then(
       () => {
-        this.router.navigate(['/rdv'])
+        this.attente = false;
+        this.router.navigate(['/rdv']);
+        console.log("Vous etes connecté !");
+        
       },
       (error) => {
+        this.attente = false;
         this.message = error;
       }
     )

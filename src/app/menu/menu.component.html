@@ -8,15 +8,15 @@
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" *ngIf="loggedIn()" >Prochaine livraison</a>
+            <a class="nav-link" *ngIf="isAuth" style="cursor:pointer">Prochaine livraison</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" *ngIf="loggedIn()">Consultation RDV</a>
+            <a class="nav-link" *ngIf="isAuth" style="cursor:pointer">Consultation RDV</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" *ngIf="loggedIn()">Contact</a>
+            <a class="nav-link" *ngIf="isAuth" style="cursor:pointer">Contact</a>
           </li>
-          <li class="nav-item dropdown" *ngIf="userType === 'admin' && loggedIn()">
+          <li class="nav-item dropdown" style="cursor:pointer" *ngIf="userType === 'admin' && isAuth">
             <a class="nav-link dropdown-toggle"  routerLinkActive="active" role="button" data-bs-toggle="dropdown">Administration</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/client" ><i class="fas fa-user-alt"></i> Gestion Client</a></li>
@@ -25,11 +25,11 @@
             </ul>
           </li>
         </ul>
-        <form class="d-flex" *ngIf="loggedIn()">
+        <form class="d-flex" *ngIf="isAuth">
           <input class="form-control me-2" type="text" placeholder="Search">
           <button class="btn btn-primary" type="button">Search</button>
         </form>
-        
+        <button class="btn btn-warning btn-md mx-3" *ngIf="isAuth" style="cursor:pointer" (click)="signOut()">Logout</button>
       </div>
     </div>
   </nav>

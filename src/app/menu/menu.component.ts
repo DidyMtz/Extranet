@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -12,19 +13,31 @@ export class MenuComponent implements OnInit {
   userType : any ='';
   isAuth!: boolean;
   
-  constructor() { }
+  constructor(private auth: AuthService, private router : Router) { }
 
   ngOnInit(): void {
 
-  this.loggedIn();
-
-  }
-
-  loggedIn(){
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) =>{
-      if(user){return true;}
-      else{ return false;}
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+
+          this.isAuth = true;
+        } else {
+
+          this.isAuth = false;
+        }
     });
+    console.log(this.isAuth);
+    
   }
-}
+
+
+  signOut(){
+    
+    this.auth.signOutUser();
+    this.router.navigate(['/signin'])
+  }
+
+  }
+
+  

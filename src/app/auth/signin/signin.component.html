@@ -15,12 +15,12 @@
                       <label for="password">Mot de passe</label>
                       <input type="password" id="password" class="form-control mt-2" formControlName="password">
                   </div>
-                  <button class="btn btn-primary mt-3 " [disabled]="signInForm.invalid" type="submit">Se connecter</button>
+                  <button class="btn btn-primary mt-3 btn-lg " [disabled]="signInForm.invalid" type="submit">Se connecter</button>
               </form>
              
           </div>
-          <div class="spinner-border mx-auto" > </div>
-          <p class="alert alert-danger text-center ">{{ message }}</p>
+          <div class="spinner-border mx-auto" *ngIf="attente" > </div>
+          <p class="alert alert-danger text-center " *ngIf="message">{{ message }}</p>
       </div>
   </div>
 </div>
