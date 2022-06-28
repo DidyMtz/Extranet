@@ -1,0 +1,50 @@
+Qu'est ce que Angular ?
+
+Angular est un framework javascript qui lie la vue HTML (UI) au model javascript(object). mvvm.
+cet un framework qui permet de crée des SPA (signle page App) via la routing. il presente plusieurs fonctionnalités annexes telles que: 
+   - creation app mobile avec ionic,
+   - gestion HTTP, DI (Injection des dépendences),...
+
+1. Difference between AngularJS and Angular
+   => - Angularjs (version 1.x, javascript, architecture avec controleur)
+      - Angular (version 2,3,4,5 ...13.2, typescript, architecture component, mobile app (ionic), CLI, lazy loading, server side, SEO)
+
+2. Directives
+   => attribut HTML de la vue qui change LE style, le comportement du DOM; EX: ngFor, ngIf,...
+
+3. Types of Directives
+   => SAC (Structurel: change structure du Dom (ngFor,ngIf,...) , Attribut change le comportement d'un element (disabled, hidden, color, ...), Component: avec template
+
+4. Component Decorator for Custom Component Directive
+
+5. NPM and Node_Modules
+
+6. TypeScript
+    => superset de javascript, il ajoute la notion de type à javascript et le concept orienté objet (hierarchie: class extends...)
+
+7. ANgular CLi
+    => Interface en ligne de commande qui permet de créer des projets, components, services, directive,... ou installer des packages avec npm (node package manager),...
+
+8. Component & Modules
+
+9. Decorator - @component @module
+    => les décorator ou annotation ou metadata représentent le genre des classes soit component  soit module.
+
+10. Templates
+    => Represente la vue HTML d'angular
+
+11. Data binding
+    => - interpolation binding
+       - event binding
+       - property binding
+
+12. Angular Architecture
+13. SPA 5 utilisé le routerLink et du component: router.navigate, <routeroutlet> sur app.component.html
+14. Routing
+    => Une collection composée d'url et component associé. au niveau vue,
+15. Lazy Loading
+    => on demand loading (des pages sont chargées uniquement quand sollicitées)
+    => pour le mettre en place, il faut utilier des modules dans les components et un module général par la suite. au niveau du routing, il faut utiliser les loadchildrens et implémenter le module correspondant.
+16. Services
+17. Dependency Injection
+18. ng serve vs ng build
